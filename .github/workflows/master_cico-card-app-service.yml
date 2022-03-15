@@ -54,4 +54,4 @@ jobs:
           app-name: 'cico-card-app-service'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A29D5D15838849B59CFE416EEBD4D773 }}
-          package: .
+          package: ./src
