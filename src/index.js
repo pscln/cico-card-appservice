@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/status', (req, res) => {
-  res.send('{"service_status": "running"}]')
+  res.send('{"service_status": "running"}')
 })
 
 app.listen(port, () => {
