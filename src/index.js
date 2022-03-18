@@ -7,7 +7,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/status', (req, res) => {
-  res.send('{"service_status": "running"}')
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify({ status: 'running' }));
 })
 
 const server = app.listen(port, () => {

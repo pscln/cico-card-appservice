@@ -10,6 +10,15 @@ describe('Home page', () => {
     })
 })
 
+describe('Status endpoint', () => {
+    it('Display the current status of the app', () => {
+        return request(index.app).get('/status')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .expect({status: 'running'})
+    })
+})
+
 // After all tests done kill the server
 afterAll(() => {
     index.server.close()

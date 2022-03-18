@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "jest test/unit",
-    "test:integration": "jest test/integration --detectOpenHandles"
+    "test:integration": "jest test/integration"
   },
   "repository": {
     "type": "git",
