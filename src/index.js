@@ -10,6 +10,9 @@ app.get('/status', (req, res) => {
   res.send('{"service_status": "running"}')
 })
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`CICO example for Azure App Service listening on port ${port}`)
 })
+
+module.exports.app = app
+module.exports.server = server
