@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: '16.x'
           cache: 'npm'
+          cache-dependency-path: src/package-lock.json'
 
       - name: npm install, build, and test
         run: |
