@@ -3,13 +3,18 @@ const { server } = require('../../index')
 
 const index = require('../../index')
 
-// Test the index-page on route GET /
+/**
+ * Test the index-page with method GET
+ */
 describe('Home page', () => {
     it('should render the index page', () => {
         return request(index.app).get('/').expect(200)
     })
 })
 
+/**
+ * Test the status endpoint with method GET
+ */
 describe('Status endpoint', () => {
     it('Display the current status of the app', () => {
         return request(index.app).get('/status')
@@ -19,7 +24,9 @@ describe('Status endpoint', () => {
     })
 })
 
-// After all tests done kill the server
+/**
+ * After all tests done kill the server
+ */
 afterAll(() => {
     index.server.close()
 })

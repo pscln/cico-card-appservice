@@ -15,5 +15,15 @@ const server = app.listen(port, () => {
   console.log(`CICO example for Azure App Service listening on port ${port}`)
 })
 
+/**
+ * dummy function for unit tests
+ * 
+ * @returns a + 2
+ */
+function pay(a){
+  return a + 2;
+}
+
 module.exports.app = app
 module.exports.server = server
+module.exports.pay = pay
