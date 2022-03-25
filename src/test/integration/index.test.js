@@ -4,15 +4,6 @@ const { server } = require('../../index')
 const index = require('../../index')
 
 /**
- * Test the index-page with method GET
- */
-describe('Home page', () => {
-    it('should render the index page', () => {
-        return request(index.app).get('/').expect(200)
-    })
-})
-
-/**
  * Test the status endpoint with method GET
  */
 describe('Status endpoint', () => {
@@ -23,6 +14,22 @@ describe('Status endpoint', () => {
         .expect({status: 'running'})
     })
 })
+
+/**
+ * Test the pay endpoint with method GET
+ */
+describe('Pay endpoint', () => {
+    it('Calculates the sum of a given parameter and 2', () => {
+        var param = 2;
+        const result = param + 2;
+
+        return request(index.app).get('/pay')
+        .query({amount: 2})
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .expect({success: true, result: result})
+    })
+});
 
 /**
  * After all tests done kill the server
