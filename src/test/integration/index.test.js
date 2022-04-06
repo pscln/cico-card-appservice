@@ -9,10 +9,10 @@ const index = require('../../index')
 describe('add endpoint', () => {
     it('Calculates the sum of a given parameter and 2', () => {
         var param = 2;
-        const result = param + 2;
+        const result = 4;
 
         return request(index.app).get('/add')
-        .query({amount: 2})
+        .query({amount: param})
         .expect(200)
         .expect('Content-Type', /json/)
         .expect({success: true, result: result})
