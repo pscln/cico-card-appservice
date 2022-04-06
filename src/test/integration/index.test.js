@@ -29,6 +29,15 @@ describe('Pay endpoint', () => {
         .expect('Content-Type', /json/)
         .expect({success: true, result: result})
     })
+
+    it('Should fail when the given parameter is not positive', () => {
+        var result = request(index.app).get('/pay')
+        .query({amount: 0})
+
+        return result.expect(400)
+            .expect('Content-Type', /json/)
+            .expect({success: false, error: 'Illegal amount type! Please provide a positive number!'});
+    })
 });
 
 /**

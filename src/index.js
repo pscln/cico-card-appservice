@@ -8,7 +8,6 @@ const port = process.env.PORT || 3000
 app.get('/status', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify({ status: 'running' }));
-  
 })
 
 /**
@@ -21,8 +20,8 @@ app.get('/pay', (req, res) => {
 
   if(amount <= 0){
     // amount must be positive
-    res.end(JSON.stringify({success: false, error: 'Illegal amount type! Please provide a positive number!'}));
     res.status(400);
+    res.end(JSON.stringify({success: false, error: 'Illegal amount type! Please provide a positive number!'}));
   }else{
     // do the calculation of amount + 2
     var result = pay(amount);

@@ -5,7 +5,7 @@ const index = require('../../index')
  */
 describe('pay function test', () => {
   it('is a dummy function that returns a + 2', () => {
-    const expectResult = 2 + 2;
+    const expectResult = 4;
     var result = index.pay(2);
 
     expect(result).toBe(expectResult);
