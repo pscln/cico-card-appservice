@@ -1,12 +1,12 @@
 const index = require('../../index')
 
 /**
- * unit test for dummy function pay()
+ * unit test for dummy function add()
  */
-describe('pay function test', () => {
+describe('add function test', () => {
   it('is a dummy function that returns a + 2', () => {
     const expectResult = 4;
-    var result = index.pay(2);
+    var result = index.add(2);
 
     expect(result).toBe(expectResult);
   });

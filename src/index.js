@@ -3,17 +3,9 @@ const app = express()
 const port = process.env.PORT || 3000
 
 /**
- * Status endpoint
+ * add endpoint handling dummy add requests (integration testing)
  */
-app.get('/status', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ status: 'running' }));
-})
-
-/**
- * pay endpoint handling dummy pay requests (integration testing)
- */
-app.get('/pay', (req, res) => {
+app.get('/add', (req, res) => {
   const amount = Number(req.query.amount);
 
   res.setHeader('Content-Type', 'application/json');
@@ -24,7 +16,7 @@ app.get('/pay', (req, res) => {
     res.end(JSON.stringify({success: false, error: 'Illegal amount type! Please provide a positive number!'}));
   }else{
     // do the calculation of amount + 2
-    var result = pay(amount);
+    var result = add(amount);
     res.end(JSON.stringify({success: true, result: result}));
   }
 })
@@ -38,10 +30,10 @@ const server = app.listen(port, () => {
  * 
  * @returns a + 2
  */
-function pay(a){
+function add(a){
   return a + 2;
 }
 
 module.exports.app = app
 module.exports.server = server
-module.exports.pay = pay
+module.exports.add = add

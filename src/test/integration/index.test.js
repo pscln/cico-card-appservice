@@ -4,26 +4,14 @@ const { server } = require('../../index')
 const index = require('../../index')
 
 /**
- * Test the status endpoint with method GET
+ * Test the add endpoint with method GET
  */
-describe('Status endpoint', () => {
-    it('Display the current status of the app', () => {
-        return request(index.app).get('/status')
-        .expect(200)
-        .expect('Content-Type', /json/)
-        .expect({status: 'running'})
-    })
-})
-
-/**
- * Test the pay endpoint with method GET
- */
-describe('Pay endpoint', () => {
+describe('add endpoint', () => {
     it('Calculates the sum of a given parameter and 2', () => {
         var param = 2;
         const result = param + 2;
 
-        return request(index.app).get('/pay')
+        return request(index.app).get('/add')
         .query({amount: 2})
         .expect(200)
         .expect('Content-Type', /json/)
@@ -31,7 +19,7 @@ describe('Pay endpoint', () => {
     })
 
     it('Should fail when the given parameter is not positive', () => {
-        var result = request(index.app).get('/pay')
+        var result = request(index.app).get('/add')
         .query({amount: 0})
 
         return result.expect(400)
