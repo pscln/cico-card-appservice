@@ -13,7 +13,7 @@ app.get('/add', (req, res) => {
   if(amount <= 0){
     // amount must be positive
     res.status(400);
-    res.end(JSON.stringify({success: false, error: 'Illegal amount type! Please provide a positive number!'}));
+    res.end(JSON.stringify({success: false, error: 'Hallo!'}));
   }else{
     // do the calculation of amount + 2
     var result = add(amount);
