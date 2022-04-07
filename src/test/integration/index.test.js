@@ -24,7 +24,7 @@ describe('add endpoint', () => {
 
         return result.expect(400)
             .expect('Content-Type', /json/)
-            .expect({success: false, error: 'Illegal amount type! Please provide a positive number!'});
+            .expect({success: false, error: 'Hallo!'});
     })
 });
 
